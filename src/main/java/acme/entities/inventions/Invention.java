@@ -1,3 +1,4 @@
+
 package acme.entities.inventions;
 
 import javax.persistence.Column;
@@ -25,55 +26,55 @@ import spam.detector.SpamDetector;
 public class Invention extends AbstractEntity {
 
 	// Serialisation identifier ----------------------------------------
-	
-	protected static final long serialVersionUID		= 1L;
-	
+
+	protected static final long	serialVersionUID	= 1L;
+
 	// Atributes -------------------------------------------------------
-	
+
 	@NotBlank
 	@Length(min = 0, max = 100)
 	protected String			name;
-	
+
 	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	@Column(unique = true)
 	protected String			code;
-	
+
 	@NotBlank
 	@Length(min = 0, max = 100)
 	protected String			technology;
-	
+
 	@NotBlank
 	@Length(min = 0, max = 255)
 	protected String			description;
-	
+
 	@NotNull
 	@Valid
 	protected Money				retailPrice;
-	
+
 	@URL
 	protected String			link;
-	
+
 	protected InventionType		inventionType;
-	
+
 	@NotNull
 	protected Boolean			published;
-	
-	// Derived attributes ----------------------------------------------
-	
+
+
 	public boolean isSpam(final SystemConfiguration systemConfiguration) {
-		
+
 		final String text = this.getName() + "\n" + this.getTechnology() + "\n" + this.getDescription();
 		return SpamDetector.isSpam(text, systemConfiguration.getWeakSpamTerms(), systemConfiguration.getStrongSpamTerms(), systemConfiguration.getStrongSpamTermsThreshold(), systemConfiguration.getWeakSpamTermsThreshold());
 
 	}
 
-	
 	// Relationships ---------------------------------------------------
-	
+
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Inventor				inventor;
-	
+	protected Inventor	inventor;
+	// Derived attributes ----------------------------------------------
+
 }
