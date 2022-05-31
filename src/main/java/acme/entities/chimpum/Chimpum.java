@@ -58,7 +58,7 @@ public class Chimpum extends AbstractEntity {
 	protected Date				endTime;
 	@NotNull
 	@Valid
-	protected Money			budged;
+	protected Money			budget;
 
 	@URL
 	protected String			link;
