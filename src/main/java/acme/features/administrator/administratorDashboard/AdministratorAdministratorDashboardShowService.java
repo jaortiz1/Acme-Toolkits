@@ -33,6 +33,10 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 	@Override
 	public AdministratorDashboard findOne(final Request<AdministratorDashboard> request) {
 		assert request != null;
+		//chimpum
+		final Double 								 ratioChimpum = this.calculateRatioInventionsWithChimpum();
+		
+		//chimpum
 		
 		final Double						         numberComponents = this.repository.findNumberComponents();
 		
@@ -57,6 +61,14 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 	    final Map<PatronageStatus, Double>         minimumBudgetPatronage= new EnumMap<>(PatronageStatus.class);
 	    final Map<PatronageStatus, Double>         maximumBudgetPatronage= new EnumMap<>(PatronageStatus.class);
 	    
+	    
+	    //chimpum
+	    final Map<String, Double>    averagePriceChimpum= new HashMap<>();
+	    final Map<String, Double>    deviationPriceChimpum= new HashMap<>();
+	    final Map<String, Double>    minimumPriceChimpum= new HashMap<>();
+	    final Map<String, Double>    maximumPriceChimpum= new HashMap<>();
+	    //chimpum
+	    
 	    final AdministratorDashboard result = new AdministratorDashboard();
 	    
 	    
@@ -65,6 +77,8 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 	    final List<String> findMinimumRetailPriceComponent = this.repository.findMinimumRetailPriceComponent();
 	    final List<String> findMaximumRetailPriceComponent = this.repository.findMaximumRetailPriceComponent();
 	    
+	    
+		
 	    for (int i=0; i<findAverageRetailPriceComponent.size();i++) {
 	    	final String[] averageComponent=findAverageRetailPriceComponent.get(i).split(":");
 	    	final Pair<String, String> averagePair = Pair.of(averageComponent[0], averageComponent[1]);
@@ -126,7 +140,29 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 	    	final String[] maximumPatronages=findMaximumBudgetPatronage.get(i).split(":");
 	    	maximumBudgetPatronage.put(PatronageStatus.values()[Integer.parseInt(maximumPatronages[0])], Double.parseDouble(maximumPatronages[1]));
 	    }
-	    
+	    //CHIMPUM
+	   
+		final List<String> findAverageChimpum = this.repository.findAverageBudgetChimpumGroupByCurrency();
+		final List<String> findDeviationChimpum = this.repository.findDeviationBudgetChimpumGroupByCurrency();
+		final List<String> findMinimumChimpum = this.repository.findMinimumBudgetChimpumGroupByCurrency();
+		final List<String> findMaximumChimpum = this.repository.findMaximumBudgetChimpumGroupByCurrency();
+		for(int i=0;i<findAverageChimpum.size();i++) {
+			final String[] avgBudget = findAverageChimpum.get(i).split(":");
+			averagePriceChimpum.put(avgBudget[0], Double.parseDouble(avgBudget[1]));
+			final String[] devBudget = findDeviationChimpum.get(i).split(":");
+			deviationPriceChimpum.put(devBudget[0], Double.parseDouble(devBudget[1]));
+			final String[] minBudget = findMinimumChimpum.get(i).split(":");
+			minimumPriceChimpum.put(minBudget[0],Double.parseDouble(minBudget[1]));
+			final String[] maxBudget = findMaximumChimpum.get(i).split(":");
+			maximumPriceChimpum.put(maxBudget[0], Double.parseDouble(maxBudget[1]));
+		}
+	
+		result.setChimpumRatioArtefacts(ratioChimpum);
+		result.setAverageBudgetChimpum(averagePriceChimpum);
+		result.setMinimumBudgetChimpum(minimumPriceChimpum);
+		result.setMaximumBudgetChimpum(maximumPriceChimpum);
+		result.setDeviationBudgetChimpum(deviationPriceChimpum);
+		//CHIMPUM
 
 	    result.setNumberComponents(numberComponents);
 	    
@@ -174,9 +210,23 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		model.setAttribute("deviationBudgetPatronage", entity.getDeviationBudgetPatronage());
 		model.setAttribute("minimumBudgetPatronage", entity.getMinimumBudgetPatronage());
 		model.setAttribute("maximumBudgetPatronage", entity.getMaximumBudgetPatronage());
+		
+		
+		//chimpum
+		model.setAttribute("ratioChimpum", entity.getChimpumRatioArtefacts());
+		model.setAttribute("averageChimpum", entity.getAverageBudgetChimpum());
+		model.setAttribute("deviationChimpum", entity.getDeviationBudgetChimpum());
+		model.setAttribute("maxChimpum", entity.getMaximumBudgetChimpum());
+		model.setAttribute("minChimpum", entity.getMinimumBudgetChimpum());
+		//chimpum
 	
 	
 	
+	}
+	public Double calculateRatioInventionsWithChimpum() {
+		final Double 								 numberInventionChimpum = this.repository.findNumberOfInventionsWithChimpum();
+		final Double 								 totalOfInventions = this.repository.findNumberOfInventions();
+		return totalOfInventions/numberInventionChimpum;
 	}
 
 }

@@ -332,3 +332,105 @@
 		</tr>
 	</jstl:forEach>
 </table>
+
+<h2>
+	<acme:message code="administrator.dashboard.form.title.chimpum"/>
+</h2>
+<table class="table table-sm" aria-describedby="administrator.dashboard.form.label.ratio.chimpum">
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.ratio.chimpum"/>
+		</th>
+		<td>
+			<acme:print value="${ratioChimpum}"/>
+		</td>
+	</tr>
+</table>
+
+<h3>
+	<acme:message code="administrator.dashboard.form.label.average.value"/>
+</h3>
+<table class="table table-sm" aria-describedby="administrator.dashboard.form.label.average.value">
+	<jstl:forEach var="entry" items="${averageChimpum}">
+		<tr>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.currency"/>
+			</th>
+			<td>
+				<acme:print value="${entry.key}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.average.value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+			</td>
+		</tr>
+	</jstl:forEach>
+</table>
+
+<h3>
+	<acme:message code="administrator.dashboard.form.label.deviation.value"/>
+</h3>
+<table class="table table-sm" aria-describedby="administrator.dashboard.form.label.deviation.value">
+	<jstl:forEach var="entry" items="${deviationChimpum}">
+		<tr>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.currency"/>
+			</th>
+			<td>
+				<acme:print value="${entry.key}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.deviation.value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+			</td>
+		</tr>
+	</jstl:forEach>
+</table>
+
+<h3>
+	<acme:message code="administrator.dashboard.form.label.maximum.value"/>
+</h3>
+<table class="table table-sm" aria-describedby="administrator.dashboard.form.label.maximum.value">
+	<jstl:forEach var="entry" items="${maxChimpum}">
+		<tr>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.currency"/>
+			</th>
+			<td>
+				<acme:print value="${entry.key}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.maximum.value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+			</td>
+		</tr>
+	</jstl:forEach>
+</table>
+
+<h3>
+	<acme:message code="administrator.dashboard.form.label.minimum.value"/>
+</h3>
+<table class="table table-sm" aria-describedby="administrator.dashboard.form.label.minimum.value">
+	<jstl:forEach var="entry" items="${minChimpum}">
+		<tr>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.currency"/>
+			</th>
+			<td>
+				<acme:print value="${entry.key}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.minimum.value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+			</td>
+		</tr>
+	</jstl:forEach>
+</table>

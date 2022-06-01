@@ -66,6 +66,8 @@ public interface AdministratorAdministratorDashboardRepository extends AbstractR
 	
 	
 	//chimpum
+	@Query("select count(invention) from Invention invention where invention.inventionType=acme.entities.inventions.InventionType.COMPONENT")
+	Double findNumberOfInventions();
 	@Query("select count(chimpum) from Chimpum chimpum where chimpum.invention.inventionType=acme.entities.inventions.InventionType.COMPONENT")
 	Double findNumberOfInventionsWithChimpum();
 		
