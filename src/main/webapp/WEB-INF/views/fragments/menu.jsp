@@ -68,6 +68,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.chimpums" action="/patron/chimpum/list"/>
 			<acme:menu-suboption code="master.menu.patron.patronages" action="/patron/patronage/list"/>
 			<acme:menu-suboption code="master.menu.patron.patronage-report" action="/patron/patronage-report/list"/>
 			<acme:menu-separator/>

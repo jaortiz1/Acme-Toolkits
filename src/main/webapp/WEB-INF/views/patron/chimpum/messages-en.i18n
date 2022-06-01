@@ -1,0 +1,29 @@
+patron.patronage.list.label.code = Code
+patron.patronage.list.label.title = Title
+patron.patronage.list.label.budget = Budget
+patron.patronage.list.label.creationTime = Creation time
+patron.patronage.list.label.startTime = Start time
+patron.patronage.list.label.endTime = End time
+patron.patronage.list.label.link = Link
+
+patron.patronage.form.button.create = Create chimpum
+
+
+patron.chimpum.form.label.code = Code
+patron.chimpum.form.label.title = Title
+patron.chimpum.form.label.budget = Budget
+patron.chimpum.form.label.creationTime = Creation time
+patron.chimpum.form.label.startTime = Start time
+patron.chimpum.form.label.endTime = End time
+patron.chimpum.form.label.link = Link
+patron.chimpum.form.label.description = Description
+patron.chimpum.form.label.invention = Chimpum's invention
+patron.chimpum.form.label.invention.name = Nombre
+patron.chimpum.form.label.invention.code = Código
+patron.chimpum.form.label.invention.technology = Tecnología
+patron.chimpum.form.label.invention.description = Descripción
+patron.chimpum.form.label.invention.retailPrice = Precio al por menor
+patron.chimpum.form.label.invention.link = Enlace
+patron.chimpum.form.label.invention.inventionType = Tipo de invención
+patron.chimpum.form.label.invention.published = Publicado
+patron.patronage.form.label.chimpum = Chimpum

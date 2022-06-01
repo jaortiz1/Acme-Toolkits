@@ -74,6 +74,7 @@ master.menu.inventor.invention.create = Crear invención
 # master.menu.patron #########################################################
 
 master.menu.patron = Patrocinador
+master.menu.patron.chimpums = Lista de chimpums
 master.menu.patron.patronages = Lista de esponsorizaciones
 master.menu.patron.patronage-report = Lista de informes de esponsorizaciones
 master.patron.patron-dashboard = Panel de Patrocinador
