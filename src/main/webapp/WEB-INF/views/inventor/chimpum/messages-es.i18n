@@ -1,0 +1,28 @@
+inventor.chimpum.list.label.code = Código
+inventor.chimpum.list.label.title = Título
+inventor.chimpum.list.label.budget = Presupuesto
+inventor.chimpum.list.label.creationTime = Fecha de creación
+inventor.chimpum.list.label.startTime = Hora de comienzo
+inventor.chimpum.list.label.endTime = Hora de fin
+inventor.chimpum.list.label.link = Enlace
+
+inventor.chimpum.form.button.create = Create chimpum
+
+inventor.chimpum.form.label.code = Código
+inventor.chimpum.form.label.title = Título
+inventor.chimpum.form.label.budget = Presupuesto
+inventor.chimpum.form.label.creationTime = Fecha de creación
+inventor.chimpum.form.label.startTime = Hora de comienzo
+inventor.chimpum.form.label.endTime = Hora de fin
+inventor.chimpum.form.label.link = Enlace
+inventor.chimpum.form.label.description = Descripción
+inventor.chimpum.form.label.invention = Invención del chimpum
+inventor.chimpum.form.label.invention.name = Name
+inventor.chimpum.form.label.invention.code = Code
+inventor.chimpum.form.label.invention.technology = Technology
+inventor.chimpum.form.label.invention.description = Description
+inventor.chimpum.form.label.invention.retailPrice = Retail price
+inventor.chimpum.form.label.invention.link = Link
+inventor.chimpum.form.label.invention.inventionType = Invention Type
+inventor.chimpum.form.label.invention.published = Published
+inventor.chimpum.form.label.chimpum = Chimpum

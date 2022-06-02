@@ -1,6 +1,4 @@
-package acme.features.patron.chimpum;
-
-import java.util.Collection;
+package acme.features.inventor.chimpum;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,29 +8,29 @@ import acme.forms.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
-import acme.framework.services.AbstractListService;
-import acme.roles.Patron;
+import acme.framework.services.AbstractShowService;
+import acme.roles.Inventor;
 
 @Service
-public class PatronChimpumListService implements AbstractListService<Patron, Chimpum>{
-	
+public class InventorChimpumShowService implements AbstractShowService<Inventor, Chimpum>{
 	// Internal state ---------------------------------------------------------
-	@Autowired
-	protected PatronChimpumRepository repository;
-	
+			@Autowired
+			protected InventorChimpumRepository repository;
+			
 	@Override
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
-
+		
 		return true;
 	}
 
 	@Override
-	public Collection<Chimpum> findMany(final Request<Chimpum> request) {
+	public Chimpum findOne(final Request<Chimpum> request) {
 		assert request != null;
-
-		Collection<Chimpum> result;
-		result = this.repository.findChimpums();
+		Chimpum result;
+		int chimpumId;
+		chimpumId = request.getModel().getInteger("id");
+		result = this.repository.findOneChimpumById(chimpumId);
 		return result;
 	}
 
@@ -41,13 +39,11 @@ public class PatronChimpumListService implements AbstractListService<Patron, Chi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
+		
 		final String defaultCurrency = this.repository.getSystemConfiguration().getSystemCurrency();
 		final Money budget = MoneyExchange.of(entity.getBudget(), defaultCurrency).execute().getTarget();
 		model.setAttribute("budget", budget);
-		request.unbind(entity, model, "code", "title", "creationTime", "startTime", "endTime", "link");
+		request.unbind(entity, model, "code","title","creationTime","startTime","endTime","link","description", "invention");
 	}
-
-	
 
 }

@@ -20,30 +20,30 @@
 
 
 	<h2>
-		<acme:message code="patron.patronage.form.label.chimpum" />
+		<acme:message code="inventor.chimpum.form.label.chimpum" />
 	</h2>
 
 
-	<acme:input-textbox code="patron.chimpum.form.label.code" path="code"
+	<acme:input-textbox code="inventor.chimpum.form.label.code" path="code"
 		readonly="false" />
-	<acme:input-textbox code="patron.chimpum.form.label.title" path="title"
+	<acme:input-textbox code="inventor.chimpum.form.label.title" path="title"
 		readonly="false" />
 
-	<acme:input-money code="patron.chimpum.form.label.budget" path="budget" />
-	<acme:input-moment code="patron.chimpum.form.label.creationTime"
+	<acme:input-money code="inventor.chimpum.form.label.budget" path="budget" />
+	<acme:input-moment code="inventor.chimpum.form.label.creationTime"
 		path="creationTime" />
-	<acme:input-moment code="patron.chimpum.form.label.startTime"
+	<acme:input-moment code="inventor.chimpum.form.label.startTime"
 		path="startTime" />
-	<acme:input-moment code="patron.chimpum.form.label.endTime"
+	<acme:input-moment code="inventor.chimpum.form.label.endTime"
 		path="endTime" />
-	<acme:input-url code="patron.chimpum.form.label.link" path="link" />
-	<acme:input-textbox code="patron.chimpum.form.label.description"
+	<acme:input-url code="inventor.chimpum.form.label.link" path="link" />
+	<acme:input-textbox code="inventor.chimpum.form.label.description"
 		path="description" readonly="false" />
 
 	<h3>
-		<acme:message code="patron.patronage.form.label.invention" />
+		<acme:message code="inventor.chimpum.form.label.invention" />
 	</h3>
-	<acme:input-textbox code="patron.chimpum.form.label.invention.code"
+	<acme:input-textbox code="inventor.chimpum.form.label.invention.code"
 		path="invention.code" readonly="false" />
 
 

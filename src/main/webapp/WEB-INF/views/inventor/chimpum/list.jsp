@@ -16,14 +16,14 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="patron.patronage.list.label.code" path="code"/>
-	<acme:list-column code="patron.patronage.list.label.title" path="title"/>
-	<acme:list-column code="patron.patronage.list.label.budget" path="budget"/>
-	<acme:list-column code="patron.patronage.list.label.creationTime" path="creationTime"/>
-	<acme:list-column code="patron.patronage.list.label.startTime" path="startTime"/>
-	<acme:list-column code="patron.patronage.list.label.endTime" path="endTime"/>
-	<acme:list-column code="patron.patronage.list.label.link" path="link"/>
+	<acme:list-column code="inventor.chimpum.list.label.code" path="code"/>
+	<acme:list-column code="inventor.chimpum.list.label.title" path="title"/>
+	<acme:list-column code="inventor.chimpum.list.label.budget" path="budget"/>
+	<acme:list-column code="inventor.chimpum.list.label.creationTime" path="creationTime"/>
+	<acme:list-column code="inventor.chimpum.list.label.startTime" path="startTime"/>
+	<acme:list-column code="inventor.chimpum.list.label.endTime" path="endTime"/>
+	<acme:list-column code="inventor.chimpum.list.label.link" path="link"/>
 
 	
 </acme:list>
-<acme:button code="patron.patronage.form.button.create" action="/patron/chimpum/create"/>
+<acme:button code="inventor.chimpum.form.button.create" action="/patron/chimpum/create"/>

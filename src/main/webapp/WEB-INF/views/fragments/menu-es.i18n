@@ -61,7 +61,7 @@ master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
 # master.menu.inventor #########################################################
-
+master.menu.inventor.chimpums = Lista de chimpums
 master.menu.inventor = Inventor
 master.menu.inventor.toolkits.list-toolkits = Ver mis cajas de herramientas
 master.menu.inventor.invention.list-tools = Ver mis herramientas

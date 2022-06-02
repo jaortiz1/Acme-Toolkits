@@ -61,7 +61,7 @@ master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
 # master.menu.inventor #########################################################
-
+master.menu.inventor.chimpums = Chimpum List
 master.menu.inventor = Inventor
 master.menu.inventor.toolkits.list-toolkits = List my toolkits
 master.menu.inventor.invention.list-tools = List my tools
@@ -74,7 +74,6 @@ master.menu.inventor.invention.create = Create Invention
 # master.menu.patron #########################################################
 
 master.menu.patron = Patron
-master.menu.patron.chimpums = Chimpum List
 master.menu.patron.patronages = Patronage List
 master.menu.patron.patronage-report = List my Patronage Reports
 master.patron.patron-dashboard = Patron Dashboard
