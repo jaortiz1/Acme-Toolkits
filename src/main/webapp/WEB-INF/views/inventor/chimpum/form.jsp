@@ -44,7 +44,21 @@
 		<acme:message code="inventor.chimpum.form.label.invention" />
 	</h3>
 	<acme:input-textbox code="inventor.chimpum.form.label.invention.code"
-		path="invention.code" readonly="false" />
+		path="inventionCode" readonly="false" />
+		<acme:input-textbox code="inventor.chimpum.form.label.invention.name"
+		path="inventionName" readonly="false" />
+		<acme:input-textbox code="inventor.chimpum.form.label.invention.published"
+		path="inventionPublished" readonly="false" />
+		<acme:input-textbox code="inventor.chimpum.form.label.invention.link"
+		path="inventionLink" readonly="false" />
+		<acme:input-textbox code="inventor.chimpum.form.label.invention.inventionType"
+		path="inventionType" readonly="false" />
+			<acme:input-textbox code="inventor.chimpum.form.label.invention.retailPrice"
+		path="inventionRetailPrice" readonly="false" />
+		<acme:input-textbox code="inventor.chimpum.form.label.invention.technology"
+		path="inventionTechnology" readonly="false" />
+		<acme:input-textbox code="inventor.chimpum.form.label.invention.description"
+		path="inventionDescription" readonly="false" />
 
 
 
