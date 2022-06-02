@@ -7,6 +7,8 @@ inventor.chimpum.list.label.endTime = End time
 inventor.chimpum.list.label.link = Link
 
 inventor.chimpum.form.button.create = Create chimpum
+inventor.chimpum.form.button.update = Update chimpum
+inventor.chimpum.form.button.delete = Delete chimpum
 inventor.chimpum.form.label.code = Code
 inventor.chimpum.form.label.title = Title
 inventor.chimpum.form.label.budget = Budget

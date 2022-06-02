@@ -6,7 +6,9 @@ inventor.chimpum.list.label.startTime = Hora de comienzo
 inventor.chimpum.list.label.endTime = Hora de fin
 inventor.chimpum.list.label.link = Enlace
 
-inventor.chimpum.form.button.create = Create chimpum
+inventor.chimpum.form.button.create = Crear chimpum
+inventor.chimpum.form.button.update = Actualizar chimpum
+inventor.chimpum.form.button.delete = Borrar chimpum
 
 inventor.chimpum.form.label.code = Código
 inventor.chimpum.form.label.title = Título

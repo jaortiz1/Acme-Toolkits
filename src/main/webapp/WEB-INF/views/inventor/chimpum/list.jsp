@@ -26,4 +26,4 @@
 
 	
 </acme:list>
-<acme:button code="inventor.chimpum.form.button.create" action="/patron/chimpum/create"/>
+<acme:button code="inventor.chimpum.form.button.create" action="/inventor/chimpum/create"/>

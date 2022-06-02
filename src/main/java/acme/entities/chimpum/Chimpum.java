@@ -23,13 +23,18 @@ import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import spam.detector.SpamDetector;
 
 @Entity
 @Getter
 @Setter
+@ToString
 public class Chimpum extends AbstractEntity {
 
+	//@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])-[0-9]{2}-[0-9]{2}-[0-9]{2}?$")
+	//AAA-123-A-22-06-02
+	
 	protected static final long	serialVersionUID	= 1L;
 	@NotBlank
 	@Pattern(regexp = "^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$")
