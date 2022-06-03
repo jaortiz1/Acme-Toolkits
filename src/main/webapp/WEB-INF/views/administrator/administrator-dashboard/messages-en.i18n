@@ -18,5 +18,5 @@ administrator.dashboard.form.title.patronages = Patronages
 administrator.dashboard.form.label.status = Patronage Status
 administrator.dashboard.form.label.number-patronages.value = Number of Patronages
 
-administrator.dashboard.form.title.chimpum = Chimpums
-administrator.dashboard.form.label.ratio.chimpum = Chimpum ratio with components
+administrator.dashboard.form.title.chimpum = Zolets
+administrator.dashboard.form.label.ratio.chimpum = Zolet ratio with components

@@ -18,5 +18,5 @@ administrator.dashboard.form.title.patronages = Esponsorizaciones
 administrator.dashboard.form.label.status = Estado de la Esponsorización
 administrator.dashboard.form.label.number-patronages.value = Número de Esponsorizaciones
 
-administrator.dashboard.form.title.chimpum = Chimpums
-administrator.dashboard.form.label.ratio.chimpum = Ratio de chimpums con componentes
+administrator.dashboard.form.title.chimpum = Zolets
+administrator.dashboard.form.label.ratio.chimpum = Ratio de zolets con componentes

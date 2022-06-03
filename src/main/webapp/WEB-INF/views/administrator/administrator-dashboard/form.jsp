@@ -342,7 +342,7 @@
 			<acme:message code="administrator.dashboard.form.label.ratio.chimpum"/>
 		</th>
 		<td>
-			<acme:print value="${ratioChimpum}"/>
+			<acme:print value="${ratioZolet}"/>
 		</td>
 	</tr>
 </table>
@@ -351,7 +351,7 @@
 	<acme:message code="administrator.dashboard.form.label.average.value"/>
 </h3>
 <table class="table table-sm" aria-describedby="administrator.dashboard.form.label.average.value">
-	<jstl:forEach var="entry" items="${averageChimpum}">
+	<jstl:forEach var="entry" items="${averageZolet}">
 		<tr>
 			<th scope="row">
 				<acme:message code="administrator.dashboard.form.label.currency"/>
@@ -373,7 +373,7 @@
 	<acme:message code="administrator.dashboard.form.label.deviation.value"/>
 </h3>
 <table class="table table-sm" aria-describedby="administrator.dashboard.form.label.deviation.value">
-	<jstl:forEach var="entry" items="${deviationChimpum}">
+	<jstl:forEach var="entry" items="${deviationZolet}">
 		<tr>
 			<th scope="row">
 				<acme:message code="administrator.dashboard.form.label.currency"/>
@@ -395,7 +395,7 @@
 	<acme:message code="administrator.dashboard.form.label.maximum.value"/>
 </h3>
 <table class="table table-sm" aria-describedby="administrator.dashboard.form.label.maximum.value">
-	<jstl:forEach var="entry" items="${maxChimpum}">
+	<jstl:forEach var="entry" items="${maxZolet}">
 		<tr>
 			<th scope="row">
 				<acme:message code="administrator.dashboard.form.label.currency"/>
@@ -417,7 +417,7 @@
 	<acme:message code="administrator.dashboard.form.label.minimum.value"/>
 </h3>
 <table class="table table-sm" aria-describedby="administrator.dashboard.form.label.minimum.value">
-	<jstl:forEach var="entry" items="${minChimpum}">
+	<jstl:forEach var="entry" items="${minZolet}">
 		<tr>
 			<th scope="row">
 				<acme:message code="administrator.dashboard.form.label.currency"/>

@@ -37,9 +37,10 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		final Double 								 ratioChimpum = this.calculateRatioInventionsWithChimpum();
 		
 		//chimpum
-		
+		final Double 								 ratioZolet = this.calculateRatioToolsWithZolet();
+
 		final Double						         numberComponents = this.repository.findNumberComponents();
-		
+
 	    final Map<Pair<String, String>, Double>    averageRetailPriceComponents= new HashMap<>();
 	    final Map<Pair<String, String>, Double>    deviationRetailPriceComponents= new HashMap<>();
 	    final Map<Pair<String, String>, Double>    minimumRetailPriceComponents= new HashMap<>();
@@ -68,6 +69,11 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 	    final Map<String, Double>    minimumPriceChimpum= new HashMap<>();
 	    final Map<String, Double>    maximumPriceChimpum= new HashMap<>();
 	    //chimpum
+	    
+	    final Map<String, Double>    averagePriceZolet= new HashMap<>();
+	    final Map<String, Double>    deviationPriceZolet= new HashMap<>();
+	    final Map<String, Double>    minimumPriceZolet= new HashMap<>();
+	    final Map<String, Double>    maximumPriceZolet= new HashMap<>();
 	    
 	    final AdministratorDashboard result = new AdministratorDashboard();
 	    
@@ -156,12 +162,33 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 			final String[] maxBudget = findMaximumChimpum.get(i).split(":");
 			maximumPriceChimpum.put(maxBudget[0], Double.parseDouble(maxBudget[1]));
 		}
+		
+		final List<String> findAverageZolet = this.repository.findAverageBudgetZoletGroupByCurrency();
+		final List<String> findDeviationZolet = this.repository.findDeviationBudgetZoletGroupByCurrency();
+		final List<String> findMinimumZolet = this.repository.findMinimumBudgetZoletGroupByCurrency();
+		final List<String> findMaximumZolet = this.repository.findMaximumBudgetZoletGroupByCurrency();
+		for(int i=0;i<findAverageZolet.size();i++) {
+			final String[] avgBudget = findAverageZolet.get(i).split(":");
+			averagePriceZolet.put(avgBudget[0], Double.parseDouble(avgBudget[1]));
+			final String[] devBudget = findDeviationZolet.get(i).split(":");
+			deviationPriceZolet.put(devBudget[0], Double.parseDouble(devBudget[1]));
+			final String[] minBudget = findMinimumZolet.get(i).split(":");
+			minimumPriceZolet.put(minBudget[0],Double.parseDouble(minBudget[1]));
+			final String[] maxBudget = findMaximumZolet.get(i).split(":");
+			maximumPriceZolet.put(maxBudget[0], Double.parseDouble(maxBudget[1]));
+		}
 	
 		result.setChimpumRatioArtefacts(ratioChimpum);
 		result.setAverageBudgetChimpum(averagePriceChimpum);
 		result.setMinimumBudgetChimpum(minimumPriceChimpum);
 		result.setMaximumBudgetChimpum(maximumPriceChimpum);
 		result.setDeviationBudgetChimpum(deviationPriceChimpum);
+		
+		result.setZoletRatioArtefacts(ratioZolet);
+		result.setAverageBudgetZolet(averagePriceZolet);
+		result.setMinimumBudgetZolet(minimumPriceZolet);
+		result.setMaximumBudgetZolet(maximumPriceZolet);
+		result.setDeviationBudgetZolet(deviationPriceZolet);
 		//CHIMPUM
 
 	    result.setNumberComponents(numberComponents);
@@ -218,6 +245,12 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		model.setAttribute("deviationChimpum", entity.getDeviationBudgetChimpum());
 		model.setAttribute("maxChimpum", entity.getMaximumBudgetChimpum());
 		model.setAttribute("minChimpum", entity.getMinimumBudgetChimpum());
+		
+		model.setAttribute("ratioZolet", entity.getChimpumRatioArtefacts());
+		model.setAttribute("averageZolet", entity.getAverageBudgetChimpum());
+		model.setAttribute("deviationZolet", entity.getDeviationBudgetChimpum());
+		model.setAttribute("maxZolet", entity.getMaximumBudgetChimpum());
+		model.setAttribute("minZolet", entity.getMinimumBudgetChimpum());
 		//chimpum
 	
 	
@@ -227,6 +260,11 @@ public class AdministratorAdministratorDashboardShowService implements AbstractS
 		final Double 								 numberInventionChimpum = this.repository.findNumberOfInventionsWithChimpum();
 		final Double 								 totalOfInventions = this.repository.findNumberOfInventions();
 		return totalOfInventions/numberInventionChimpum;
+	}
+	public Double calculateRatioToolsWithZolet() {
+		final Double 								 numberInvention = this.repository.findNumberOfToolsWithZolet();
+		final Double 								 totalOfInventions = this.repository.findNumberOfTools();
+		return totalOfInventions/numberInvention;
 	}
 
 }

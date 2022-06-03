@@ -48,6 +48,13 @@ public class AdministratorDashboard implements Serializable{
 	    Map<String, Double>                  minimumBudgetChimpum;
 	    Map<String, Double>                  maximumBudgetChimpum;
 	    
+	    Double 								zoletRatioArtefacts;
+
+	    Map<String, Double>                  averageBudgetZolet;
+	    Map<String, Double>                  deviationBudgetZolet;
+	    Map<String, Double>                  minimumBudgetZolet;
+	    Map<String, Double>                  maximumBudgetZolet;
+	    
 		// Derived attributes -----------------------------------------------------
 
 		// Relationships ----------------------------------------------------------

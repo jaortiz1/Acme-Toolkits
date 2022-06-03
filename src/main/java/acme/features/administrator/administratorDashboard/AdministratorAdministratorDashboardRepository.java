@@ -82,4 +82,25 @@ public interface AdministratorAdministratorDashboardRepository extends AbstractR
 		
 	@Query("select concat(chimpum.budget.currency,':', max(chimpum.budget.amount)) from Chimpum chimpum group by chimpum.budget.currency")
 	List<String> findMaximumBudgetChimpumGroupByCurrency();
+	
+	
+	
+	@Query("select count(invention) from Invention invention where invention.inventionType=acme.entities.inventions.InventionType.TOOL")
+	Double findNumberOfTools();
+	@Query("select count(zolet) from Zolet zolet where zolet.invention.inventionType=acme.entities.inventions.InventionType.TOOL")
+	Double findNumberOfToolsWithZolet();
+	@Query("select concat(zolet.helping.currency,':', avg(zolet.helping.amount)) from Zolet zolet group by zolet.helping.currency")
+	List<String> findAverageBudgetZoletGroupByCurrency();
+		
+	@Query("select concat(zolet.helping.currency,':',stddev(zolet.helping.amount)) from Zolet zolet group by zolet.helping.currency")
+	List<String> findDeviationBudgetZoletGroupByCurrency();
+		
+	@Query("select concat(zolet.helping.currency,':', min(zolet.helping.amount)) from Zolet zolet group by zolet.helping.currency")
+	List<String> findMinimumBudgetZoletGroupByCurrency();
+		
+	@Query("select concat(zolet.helping.currency,':', max(zolet.helping.amount)) from Zolet zolet group by zolet.helping.currency")
+	List<String> findMaximumBudgetZoletGroupByCurrency();
+	
+		
+	
 }
